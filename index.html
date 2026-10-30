@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T.E Mhlanga | Developer & Engineer Portfolio</title>
+    <meta name="description" content="Professional portfolio showcasing full-stack engineering, interactive video walkthroughs, and detailed project case studies. Designed for LinkedIn profile demo.">
+    <!-- Open Graph & LinkedIn Sharing Meta Tags -->
+    <meta property="og:title" content="T.E Mhlanga | Developer & Engineer Portfolio">
+    <meta property="og:description" content="Explore live video walkthroughs, system specifications, and production case studies. Live interactive demo portfolio for LinkedIn recruiters and clients.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=1200&auto=format&fit=crop&q=80">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Animated Canvas Glow -->
+    <div class="bg-glow-container">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+        <div class="bg-grid-overlay"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" onclick="showPage('home'); return false;" class="nav-logo">
+                <span class="logo-icon"><i data-lucide="code-2"></i></span>
+                <span class="logo-text">T.E Mhlanga-Portfolio<span class="dot">.</span></span>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#" onclick="showPage('home'); return false;" class="nav-link active" id="nav-home">Home</a>
+                <a href="#" onclick="showPage('projects'); return false;" class="nav-link" id="nav-projects">Projects</a>
+                <a href="#" onclick="showPage('video-vault'); return false;" class="nav-link" id="nav-video-vault">Video Vault</a>
+                <a href="#" onclick="showPage('about'); return false;" class="nav-link" id="nav-about">About & Process</a>
+                <a href="#" onclick="showPage('contact'); return false;" class="nav-link" id="nav-contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn btn-glass" onclick="copyPortfolioDemoLink()" title="Copy Link for LinkedIn profile or messaging">
+                    <i data-lucide="share-2"></i> <span>Copy Demo Link</span>
+                </button>
+                <a href="https://www.linkedin.com" target="_blank" id="navLinkedInLink" class="btn btn-linkedin" title="Open LinkedIn Profile">
+                    <i data-lucide="linkedin"></i> <span>LinkedIn</span>
+                </a>
+                <div id="adminStatusContainer" style="display: none;"></div>
+                <button class="btn btn-primary" id="openAddModalBtn" title="Protected by Admin PIN">
+                    <i data-lucide="lock" id="addBtnLockIcon" style="width: 14px; height: 14px; margin-right: 4px;"></i><i data-lucide="plus"></i> Add Project
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page 1: Home View (Hero Section) -->
+        <div class="page-view active" id="page-home">
+            <section class="hero-section">
+                <div class="container hero-container">
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px;">
+                        <div class="badge hero-badge">
+                            <span class="pulse-dot"></span> Available for New Opportunities & Contract Work
+                        </div>
+                        <div class="badge hero-badge linkedin-badge">
+                            <i data-lucide="linkedin"></i> <span>LinkedIn Portfolio Demo</span>
+                        </div>
+                    </div>
+
+                    <!-- LinkedIn Demo Notice Banner -->
+                    <div class="demo-banner-box">
+                        <div class="demo-banner-content">
+                            <div class="demo-banner-icon"><i data-lucide="linkedin"></i></div>
+                            <div>
+                                <strong style="color: var(--text-primary); font-size: 0.95rem;">Interactive Demo for LinkedIn Profile Visitors</strong>
+                                <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">Browse engineered applications, play real video walkthroughs, and review architecture blueprints directly in your browser.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                            <button class="btn btn-glass btn-sm" onclick="copyPortfolioDemoLink()"><i data-lucide="copy"></i> Copy Link for LinkedIn</button>
+                            <a href="https://www.linkedin.com" target="_blank" id="bannerLinkedInLink" class="btn btn-linkedin btn-sm"><i data-lucide="external-link"></i> View LinkedIn Profile</a>
+                        </div>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Building Powerful Apps & <br>
+                        <span class="gradient-text">Showcasing Products That Work</span>
+                    </h1>
+                    <p class="hero-description">
+                        Welcome! Here you'll find live code repositories, interactive video walkthroughs, and detailed technical case studies of applications I've engineered—including high-impact NDA & client projects.
+                    </p>
+
+                    <!-- Key Metrics & Proof Banner -->
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <span class="stat-number">12+</span>
+                            <span class="stat-label">Projects Built</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Video Walkthroughs</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">NDA / Client</span>
+                            <span class="stat-label">Case Studies Ready</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta-group">
+                        <a href="#" onclick="showPage('projects'); return false;" class="btn btn-primary btn-lg">
+                            <i data-lucide="folder"></i> View All Projects
+                        </a>
+                        <a href="#" onclick="showPage('video-vault'); return false;" class="btn btn-glass btn-lg">
+                            <i data-lucide="play-circle"></i> Explore Video Vault
+                        </a>
+                        <button onclick="copyPortfolioDemoLink()" class="btn btn-glass btn-lg">
+                            <i data-lucide="share-2"></i> Copy LinkedIn Demo Link
+                        </button>
+                        <a href="#guide-modal" class="btn btn-glass btn-lg" id="openGuideBtn">
+                            <i data-lucide="help-circle"></i> How Video Portfolios Work
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Page 2: Projects Grid View -->
+        <div class="page-view" id="page-projects">
+            <section id="projects" class="projects-section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="section-header">
+                        <div>
+                            <h2 class="section-title">Featured Projects</h2>
+                            <p class="section-subtitle">Filter by source code availability, video walkthroughs, or client NDA case studies.</p>
+                        </div>
+
+                        <!-- Category Filters -->
+                        <div class="filter-bar">
+                            <button class="filter-btn active" data-filter="all">All Projects</button>
+                            <button class="filter-btn" data-filter="video-only">
+                                <i data-lucide="video"></i> Video Showcase (NDA)
+                            </button>
+                            <button class="filter-btn" data-filter="open-source">
+                                <i data-lucide="github"></i> Open Source (Code Available)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Projects Grid -->
+                    <div class="projects-grid" id="projectsGrid">
+                        <!-- Projects will be rendered dynamically by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Page 2: Video Vault View -->
+        <div class="page-view" id="page-video-vault">
+            <section id="video-vault" class="video-vault-section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="section-header center">
+                        <h2 class="section-title">The Video Showcase Vault</h2>
+                        <p class="section-subtitle">No source code? No problem. Watch end-to-end screen recordings, feature breakdowns, and live UI interactions.</p>
+                    </div>
+
+                    <div class="vault-cards-container" id="vaultContainer">
+                        <!-- Dynamic Vault Cards -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Page 3: About & Methodology View -->
+        <div class="page-view" id="page-about">
+            <section id="about" class="about-section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="about-grid">
+                        <div class="about-content">
+                            <span class="badge">My Methodology</span>
+                            <h2 class="section-title">How I Present Projects Without Source Code</h2>
+                            <p class="about-lead">
+                                In tech development, source code is often proprietary, owned by clients, or protected under non-disclosure agreements (NDAs). Having video evidence of a working product is often more valuable to hiring managers than raw code repositories.
+                            </p>
+
+                            <div class="process-steps">
+                                <div class="process-step">
+                                    <div class="step-icon"><i data-lucide="video"></i></div>
+                                    <div class="step-info">
+                                        <h3>1. High-Quality Screen Recording</h3>
+                                        <p>Comprehensive video walkthroughs demonstrating user workflows, authentication, data handling, and edge cases.</p>
+                                    </div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-icon"><i data-lucide="layers"></i></div>
+                                    <div class="step-info">
+                                        <h3>2. Architectural & System Breakdown</h3>
+                                        <p>Deep-dives into tech stacks, API schemas, database architecture, and performance bottlenecks I solved.</p>
+                                    </div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-icon"><i data-lucide="shield-check"></i></div>
+                                    <div class="step-info">
+                                        <h3>3. Role & Ownership Transparency</h3>
+                                        <p>Clear documentation of my exact role, engineering decisions, and measurable outcomes delivered.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about-card glass-panel">
+                            <div class="card-header">
+                                <i data-lucide="cpu" class="icon-accent"></i>
+                                <h3>Core Technical Skills</h3>
+                            </div>
+                            <div class="skills-list">
+                                <span class="skill-tag"><i data-lucide="code"></i> JavaScript / TypeScript</span>
+                                <span class="skill-tag"><i data-lucide="globe"></i> React / Next.js / HTML5</span>
+                                <span class="skill-tag"><i data-lucide="server"></i> Node.js / Express</span>
+                                <span class="skill-tag"><i data-lucide="database"></i> PostgreSQL / MongoDB</span>
+                                <span class="skill-tag"><i data-lucide="layout"></i> Responsive CSS / Tailwind</span>
+                                <span class="skill-tag"><i data-lucide="git-branch"></i> Git / CI/CD Pipelines</span>
+                                <span class="skill-tag"><i data-lucide="video"></i> Video Case Studies</span>
+                                <span class="skill-tag"><i data-lucide="figma"></i> UI/UX Prototyping</span>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline btn-full" id="exportDataBtn">
+                                    <i data-lucide="download"></i> Backup Portfolio Data (JSON)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Page 5: Contact View -->
+        <div class="page-view" id="page-contact">
+            <section id="contact" class="contact-section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="contact-card glass-panel">
+                        <div class="contact-content">
+                            <h2>Let's Build Something Great Together</h2>
+                            <p>Interested in working together or seeing more in-depth video demos of my work? Get in touch!</p>
+                            <div class="contact-buttons">
+                                <button type="button" class="btn btn-primary btn-lg" onclick="openEmailModal('thembinkosie873@gmail.com')">
+                                    <i data-lucide="mail"></i> Send Email
+                                </button>
+                            </div>
+
+                            <!-- Alternative Contact Details -->
+                            <div class="alt-contact-container" style="margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border-color);">
+                                <h4 style="font-size: 0.95rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px;">Alternative Contact Details</h4>
+                                <div class="alt-contact-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;">
+                                    <div class="alt-contact-item" style="display: flex; align-items: center; gap: 12px; background: rgba(0,0,0,0.25); padding: 12px 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                                        <i data-lucide="linkedin" style="color: #0a66c2; width: 22px; height: 22px;"></i>
+                                        <div style="text-align: left;">
+                                            <span style="display: block; font-size: 0.8rem; color: var(--text-muted);">LinkedIn Profile</span>
+                                            <a href="https://www.linkedin.com" target="_blank" id="contactLinkedInLink" style="color: var(--text-primary); text-decoration: none; font-weight: 600;">Connect on LinkedIn</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="alt-contact-item" style="display: flex; align-items: center; gap: 12px; background: rgba(0,0,0,0.25); padding: 12px 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                                        <i data-lucide="mail" style="color: var(--secondary); width: 22px; height: 22px;"></i>
+                                        <div style="text-align: left;">
+                                            <span style="display: block; font-size: 0.8rem; color: var(--text-muted);">Alternative Email</span>
+                                            <a href="#" onclick="openEmailModal('mhlanga03@gmail.com'); return false;" style="color: var(--text-primary); text-decoration: none; font-weight: 600;">mhlanga03@gmail.com</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="alt-contact-item" style="display: flex; align-items: center; gap: 12px; background: rgba(0,0,0,0.25); padding: 12px 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                                        <i data-lucide="phone" style="color: var(--success); width: 22px; height: 22px;"></i>
+                                        <div style="text-align: left;">
+                                            <span style="display: block; font-size: 0.8rem; color: var(--text-muted);">Contact Number</span>
+                                            <a href="tel:0785681139" style="color: var(--text-primary); text-decoration: none; font-weight: 600;">0785681139</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Project Detail & Video Player Modal -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-card glass-panel large-modal">
+            <button class="modal-close" id="closeProjectModal"><i data-lucide="x"></i></button>
+            <div class="modal-body" id="modalContent">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Project Modal -->
+    <div class="modal-overlay" id="addProjectModal">
+        <div class="modal-card glass-panel">
+            <button class="modal-close" id="closeAddModal"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <h2 id="modalFormTitle"><i data-lucide="plus-circle"></i> Add New Project</h2>
+                <p id="modalFormSubtitle">Enter project details and upload videos, photos, documents, or project files.</p>
+            </div>
+            <form id="addProjectForm" class="project-form">
+                <input type="hidden" id="editingProjectId" value="">
+
+                <div class="form-group">
+                    <label for="projTitle">Project Title *</label>
+                    <input type="text" id="projTitle" required placeholder="e.g. Attendance & Leave Management Portal">
+                </div>
+
+                <div class="form-group">
+                    <label for="projDescription">Project Description *</label>
+                    <textarea id="projDescription" rows="3" required placeholder="Describe what this project does, user workflows, and technical details..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="projTechStack">Languages & Technologies Used *</label>
+                    <input type="text" id="projTechStack" required placeholder="e.g. PHP, JavaScript, Python, C#, HTML/CSS, MySQL, VBA, Access">
+                    <small class="form-help">Enter all programming languages, tools, and databases used (separated by commas).</small>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="projRole">Your Role (Optional)</label>
+                        <input type="text" id="projRole" placeholder="e.g. Full-Stack Developer">
+                    </div>
+                </div>
+
+                <!-- Multi-File Upload Section -->
+                <div class="upload-section-box" style="background: rgba(0,0,0,0.3); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 16px;">
+                    <h4 style="font-size: 0.95rem; color: var(--secondary); display: flex; align-items: center; gap: 8px;">
+                        <i data-lucide="upload-cloud"></i> Project Media & File Attachments
+                    </h4>
+
+                    <div class="form-group">
+                        <label for="projMediaFiles"><i data-lucide="film"></i> Upload Media (Multiple Videos & Photos)</label>
+                        <input type="file" id="projMediaFiles" multiple accept="video/*,image/*,.mp4,.mov,.avi,.png,.jpg,.jpeg,.gif" style="padding: 8px;">
+                        <small class="form-help">Upload video demos (.mp4, .mov) or UI screenshots (.png, .jpg).</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projDocFiles"><i data-lucide="file-text"></i> Upload Project Files & Documents (PDF, Word, Excel, Access DB, ZIP)</label>
+                        <input type="file" id="projDocFiles" multiple accept=".pdf,.docx,.doc,.xlsx,.xls,.accdb,.mdb,.zip,.rar,.7z" style="padding: 8px;">
+                        <small class="form-help">Attach project files (PDFs, Word docs, Excel spreadsheets, Access databases, ZIP archives, or source code).</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projVideoUrl">Or Video / Document Web Links / Local Paths (Optional)</label>
+                        <textarea id="projVideoUrl" rows="2" placeholder="Paste video/file links or file paths (one per line)"></textarea>
+                    </div>
+                </div>
+
+                <!-- Container to show currently attached files when editing -->
+                <div id="existingFilesContainer" style="display: none; margin-top: 12px;"></div>
+
+                <div class="form-actions" style="margin-top: 8px; display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <button type="button" class="btn btn-danger" id="deleteProjectBtn" style="display: none;">
+                        <i data-lucide="trash-2"></i> Delete Project
+                    </button>
+                    <div style="display: flex; gap: 10px; margin-left: auto;">
+                        <button type="button" class="btn btn-outline" id="cancelAddBtn">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="saveProjectBtn"><i data-lucide="save"></i> Save Project</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Email Provider Selector Modal -->
+    <div class="modal-overlay" id="emailModal">
+        <div class="modal-card glass-panel">
+            <button class="modal-close" id="closeEmailModal"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <h2><i data-lucide="mail"></i> Select Email Provider</h2>
+                <p>Choose your preferred email service to send an email to <strong id="targetEmailDisplay" style="color: var(--secondary);">thembinkosie873@gmail.com</strong>:</p>
+            </div>
+            <div class="email-options-grid">
+                <a href="#" id="gmailLink" target="_blank" class="email-option-card">
+                    <div class="email-option-icon gmail-icon">
+                        <i data-lucide="mail"></i>
+                    </div>
+                    <div class="email-option-text">
+                        <h4>Gmail (Web Browser)</h4>
+                        <p>Opens Gmail web composer directly in new tab</p>
+                    </div>
+                    <i data-lucide="external-link" class="option-arrow"></i>
+                </a>
+
+                <a href="#" id="outlookLink" target="_blank" class="email-option-card">
+                    <div class="email-option-icon outlook-icon">
+                        <i data-lucide="mail"></i>
+                    </div>
+                    <div class="email-option-text">
+                        <h4>Outlook / Office365 Web</h4>
+                        <p>Opens Outlook Web app ready to compose email</p>
+                    </div>
+                    <i data-lucide="external-link" class="option-arrow"></i>
+                </a>
+
+                <a href="#" id="yahooLink" target="_blank" class="email-option-card">
+                    <div class="email-option-icon yahoo-icon">
+                        <i data-lucide="mail"></i>
+                    </div>
+                    <div class="email-option-text">
+                        <h4>Yahoo Mail</h4>
+                        <p>Opens Yahoo Mail web composer</p>
+                    </div>
+                    <i data-lucide="external-link" class="option-arrow"></i>
+                </a>
+
+                <a href="#" id="mailtoLink" class="email-option-card">
+                    <div class="email-option-icon default-icon">
+                        <i data-lucide="send"></i>
+                    </div>
+                    <div class="email-option-text">
+                        <h4>Default Desktop App</h4>
+                        <p>Opens Windows Mail, Outlook App, or Apple Mail</p>
+                    </div>
+                    <i data-lucide="external-link" class="option-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Strategy Guide Modal -->
+    <div class="modal-overlay" id="guideModal">
+        <div class="modal-card glass-panel">
+            <button class="modal-close" id="closeGuideModal"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <h2><i data-lucide="book-open"></i> Portfolio Strategy: Video vs. Code</h2>
+            </div>
+            <div class="guide-content">
+                <div class="guide-item">
+                    <h4><i data-lucide="check-circle-2" class="text-success"></i> Why recruiters love video demos:</h4>
+                    <p>90% of hiring managers and clients do not clone GitHub repositories or run <code>npm install</code>. A 60-second video demo proves your code works, highlights UI polish, and demonstrates product thinking instantly.</p>
+                </div>
+                <div class="guide-item">
+                    <h4><i data-lucide="shield" class="text-accent"></i> Handling Client NDAs:</h4>
+                    <p>When code is confidential, video walkthroughs focused on non-sensitive workflows demonstrate your technical mastery without violating IP or contracts.</p>
+                </div>
+                <div class="guide-item">
+                    <h4><i data-lucide="list-checks" class="text-info"></i> What to include in your case study:</h4>
+                    <ul>
+                        <li><strong>Problem statement:</strong> What problem did the app solve?</li>
+                        <li><strong>Your specific contributions:</strong> Did you build the frontend, backend, or full system?</li>
+                        <li><strong>Key technical decisions:</strong> Why did you pick specific frameworks or database schemas?</li>
+                        <li><strong>Video chapters:</strong> Timestamp key features so visitors can jump straight to UI highlight clips.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security PIN Verification Modal -->
+    <div class="modal-overlay" id="pinModal">
+        <div class="modal-card glass-panel pin-modal-card">
+            <button class="modal-close" id="closePinModal"><i data-lucide="x"></i></button>
+            <div class="pin-icon-wrap">
+                <i data-lucide="shield-lock" style="width: 32px; height: 32px;"></i>
+            </div>
+            <h2 style="font-size: 1.45rem; font-weight: 800; margin-bottom: 6px;">Admin Authorization</h2>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 16px;">
+                Enter your security PIN to add, edit, or delete portfolio content.
+            </p>
+
+            <form id="pinForm" onsubmit="event.preventDefault(); submitPinVerification();">
+                <div class="pin-input-container">
+                    <input type="password" id="pinInput" class="pin-input-field" maxlength="12" placeholder="••••••••••" autocomplete="off" inputmode="numeric">
+                    <button type="button" class="pin-toggle-btn" id="togglePinVisibilityBtn" title="Show / Hide PIN">
+                        <i data-lucide="eye" id="pinEyeIcon"></i>
+                    </button>
+                </div>
+
+                <div id="pinMessage" class="pin-message"></div>
+
+                <!-- Fast Touch / Click Keypad -->
+                <div class="pin-keypad">
+                    <button type="button" class="pin-key" onclick="appendPinDigit('1')">1</button>
+                    <button type="button" class="pin-key" onclick="appendPinDigit('2')">2</button>
+                    <button type="button" class="pin-key" onclick="appendPinDigit('3')">3</button>
+                    <button type="button" class="pin-key" onclick="appendPinDigit('4')">4</button>
+                    <button type="button" class="pin-key" onclick="appendPinDigit('5')">5</button>
+                    <button type="button" class="pin-key" onclick="appendPinDigit('6')">6</button>
+                    <button type="button" class="pin-key" onclick="appendPinDigit('7')">7</button>
+                    <button type="button" class="pin-key" onclick="appendPinDigit('8')">8</button>
+                    <button type="button" class="pin-key" onclick="appendPinDigit('9')">9</button>
+                    <button type="button" class="pin-key key-action" onclick="clearPin()">Clear</button>
+                    <button type="button" class="pin-key" onclick="appendPinDigit('0')">0</button>
+                    <button type="button" class="pin-key key-action" onclick="backspacePin()">⌫</button>
+                </div>
+
+                <div class="form-actions" style="margin-top: 12px; display: flex; gap: 10px;">
+                    <button type="button" class="btn btn-outline" id="cancelPinBtn" style="flex: 1;">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submitPinBtn" style="flex: 1.4;">
+                        <i data-lucide="unlock"></i> Verify PIN
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="portfolioToast" class="portfolio-toast">
+        <i data-lucide="check-circle" id="toastIcon"></i>
+        <span id="toastMessage">Demo Link Copied</span>
+    </div>
+
+    <!-- Footer -->  
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>Thembinkosi Emmanuel Mhlanga &copy; 2026 Developer Portfolio. Built with high-end glassmorphism & video case study integration.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
